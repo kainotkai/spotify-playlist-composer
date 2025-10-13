@@ -3,6 +3,7 @@ from utils import getTracksByLink
 class BlockPlaylist:
     def __init__(self):
         self._composedBlocks = []
+        # TODO: Implement Block Categories
         self._allBlockCategories = []
         self._allSongsList = [] 
         self._allSongsCount = {}
@@ -23,6 +24,7 @@ class BlockPlaylist:
             user = user_id,
             name=name,
             public=True,
+            # TODO: This is hardcoded - add category list
             description="Pass"
         )
         trackLinks = getTracksByLink(self._allSongsList)

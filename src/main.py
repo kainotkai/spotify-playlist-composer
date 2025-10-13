@@ -1,13 +1,12 @@
-from classes.blockPlaylist import BlockPlaylist 
-from classes.block import Block
-from classes.song import Song 
-from utils import addBlocksToPlaylist
-from getAllBlocks import getAllBlocks
-
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 import os
+from random import randint
+from datetime import datetime
+
+from classes import Block, BlockPlaylist, Song
+from utils import getAllBlocks
 
 load_dotenv()
 client_id = os.getenv('SPOTIPY_CLIENT_ID')
@@ -28,9 +27,13 @@ def main():
     newPlaylist = BlockPlaylist() 
     results = sp.current_user_playlists()
     allBlocks = getAllBlocks(sp, results)
+
     for block in allBlocks:
-        newPlaylist.addBlock(block)
-    newPlaylist.createSpotifyPlaylist(sp, "New Playlist From Blocks")
+        if "chill" in block.getCategories() and randint(1, 10) <= 5:
+            newPlaylist.addBlock(block)
+    
+    newPlaylist.createSpotifyPlaylist(sp, f"Random Chill Playlist - {datetime.now()}")
+
 
 if __name__ == "__main__":
     main()
