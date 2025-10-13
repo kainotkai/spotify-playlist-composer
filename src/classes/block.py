@@ -1,10 +1,20 @@
+from classes.song import Song
+
 class Block:
     def __init__(this):
         this._parentBlock = None
         this._childBlocks = []
         this._songs = []
         this._categories = [] 
-    
+
+    def __init__(this, tracks):
+        this._parentBlock = None
+        this._childBlocks = [] 
+        this._songs = []
+        for i, item in enumerate(tracks['items']):
+            track = item['track'] 
+            this._songs.append(Song(track['name'], track['external_urls']['spotify']))
+
     def addSong(this, song):
         this._songs.append(song)
 
