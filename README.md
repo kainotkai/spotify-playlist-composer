@@ -61,4 +61,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - kait069111@gmail.com
+Kai T. - kait069111@gmail.com
