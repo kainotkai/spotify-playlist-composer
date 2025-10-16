@@ -6,7 +6,7 @@ def addBlocksToPlaylist(block , playlist):
 def getTracksByLink(songLinkList):
     trackLinks = []
     for song in songLinkList:
-        trackId = song.getLink().split("https://open.spotify.com/track/")[-1].split('?')[0]
+        trackId = song.get_link().split("https://open.spotify.com/track/")[-1].split('?')[0]
         trackLinks.append(f"spotify:track:{trackId}")
     
     return trackLinks

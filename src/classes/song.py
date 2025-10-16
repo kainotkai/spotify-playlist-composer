@@ -4,13 +4,13 @@ class Song:
         self._link = link
         print(self._link)
 
-    def getName(self):
+    def get_name(self):
         """
             Returns the name of this Song object 
         """
         return self._name
     
-    def getLink(self):
+    def get_link(self):
         """
             Returns the spotify - clickable link of a spotify song 
         """

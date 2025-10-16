@@ -29,10 +29,10 @@ def main():
     allBlocks = getAllBlocks(sp, results)
 
     for block in allBlocks:
-        if "chill" in block.getCategories() and randint(1, 10) <= 5:
-            newPlaylist.addBlock(block)
+        if "chill" in block.get_categories() and randint(1, 10) <= 5:
+            newPlaylist.add_block(block)
     
-    newPlaylist.createSpotifyPlaylist(sp, f"Random Chill Playlist - {datetime.now()}")
+    newPlaylist.create_spotify_playlist(sp, f"Random Chill Playlist - {datetime.now()}")
 
 
 if __name__ == "__main__":
