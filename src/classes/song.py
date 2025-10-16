@@ -2,7 +2,7 @@ class Song:
     def __init__(self, name, link):
         self._name = name
         self._link = link
-        print(self._link)
+        print(f"Reading: {name}")
 
     def get_name(self):
         """
@@ -18,5 +18,12 @@ class Song:
     
     def __repr__(self):
         return str(self._name)
+    
+    def __hash__(self):
+        return hash(self._name + self._link)
+    
+    def __eq__(self, other):
+        if isinstance(other, Song):
+            return self._name == other._name and self._link == other._link
 
 

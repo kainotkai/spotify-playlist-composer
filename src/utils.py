@@ -4,6 +4,7 @@ def addBlocksToPlaylist(block , playlist):
     playlist.addBlock(block)
 
 def getTracksByLink(songLinkList):
+    print(songLinkList)
     trackLinks = []
     for song in songLinkList:
         trackId = song.get_link().split("https://open.spotify.com/track/")[-1].split('?')[0]
